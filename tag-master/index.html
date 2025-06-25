@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix the Broken HTML</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 1em;
+      min-height: 100vh;
+      margin: 0;
+    }
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      height: 200px;
+      margin-bottom: 1em;
+      font-family: monospace;
+      font-size: 1em;
+    }
+    button, select {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0.5em;
+    }
+    iframe {
+      width: 90%;
+      max-width: 600px;
+      height: 200px;
+      border: 1px solid #555;
+      background: white;
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-top: 2em;
+      width: 100%;
+      max-width: 600px;
+    }
+    #message {
+      font-size: 1.2em;
+      margin-top: 1em;
+      color: limegreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fix the Broken HTML</h1>
+  <p>Fix the HTML below so it renders a proper webpage!</p>
+
+  <div>
+    <label for="levelSelect">Choose a level:</label>
+    <select id="levelSelect" onchange="loadLevel()"></select>
+  </div>
+
+  <div class="section">
+    <h2>Your Code</h2>
+    <textarea id="editor"></textarea>
+    <button onclick="runCode()">Run Code</button>
+    <iframe id="preview"></iframe>
+    <div id="message"></div>
+  </div>
+
+  <div class="section">
+    <h2>What It Should Look Like</h2>
+    <iframe id="expected"></iframe>
+  </div>
+
+  <script>
+    const levels = [
+    {
+      name: "Level 1",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Welcome to my site\n<p>This is a paragraph\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Welcome to my site</h1>\n<p>This is a paragraph</p>\n</body>\n</html>`
+    },
+    {
+      name: "Level 2",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>My Blog</h1>\n<p>Post 1</p>\n<p>Post 2\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>My Blog</h1>\n<p>Post 1</p>\n<p>Post 2</p>\n</body>\n</html>`
+    },
+    {
+      name: "Level 3",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Shopping List</h1>\n<ul>\n<li>Apples\n<li>Bananas\n<li>Carrots\n</ul>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Shopping List</h1>\n<ul>\n<li>Apples</li>\n<li>Bananas</li>\n<li>Carrots</li>\n</ul>\n</body>\n</html>`
+    },
+    {
+      name: "Level 4",
+      broken: `<!DOCTYPE html>\n<html>\n<head>\n<title>My Page</title>\n</head>\n<body>\n<h1>Welcome</h1>\n<p>Enjoy your stay\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<head>\n<title>My Page</title>\n</head>\n<body>\n<h1>Welcome</h1>\n<p>Enjoy your stay</p>\n</body>\n</html>`
+    },
+    {
+      name: "Level 5",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Gallery</h1>\n<div>\n<!-- alt this as "html"--!>\n<img src="image1.png">\n<!-- alt this as "javascript"--!>\n<img width="200px" src="image2.webp">\n</div>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Gallery</h1>\n<div><!-- alt this as "html"--!>\n<img src="image1.png" alt="html">\n<!-- alt this as "javascript"--!>\n<img width="200px" src="image2.webp" alt="javascript">\n</div>\n</body>\n</html>`
+    },
+    {
+      name: "Level 6",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Contact Us</h1>\n<form>\n<input type="text" name="name">\n<input type="email" name="email">\n<button>Submit\n</form>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Contact Us</h1>\n<form>\n<input type="text" name="name" placeholder="Your Name">\n<input type="email" name="email" placeholder="Your Email">\n<button>Submit</button>\n</form>\n</body>\n</html>`
+    },
+    {
+      name: "Level 7",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Navigation</h1>\n<nav>\n<a href="home.html">Home\n<a href="about.html">About\n<a href="contact.html">Contact\n</nav>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Navigation</h1>\n<nav>\n<a href="home.html">Home</a>\n<a href="about.html">About</a>\n<a href="contact.html">Contact</a>\n</nav>\n</body>\n</html>`
+    },
+    {
+      name: "Level 8",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Article</h1>\n<article>\n<h2>Title\n<p>Content\n</article>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Article</h1>\n<article>\n<h2>Title</h2>\n<p>Content</p>\n</article>\n</body>\n</html>`
+    },
+    {
+      name: "Level 9",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Table</h1>\n<table>\n<tr>\n<td>Row 1 Col 1\n<td>Row 1 Col 2\n</tr>\n<tr>\n<td>Row 2 Col 1\n<td>Row 2 Col 2\n</tr>\n</table>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Table</h1>\n<table>\n<tr>\n<td>Row 1 Col 1</td>\n<td>Row 1 Col 2</td>\n</tr>\n<tr>\n<td>Row 2 Col 1</td>\n<td>Row 2 Col 2</td>\n</tr>\n</table>\n</body>\n</html>`
+    },
+    {
+      name: "Level 10",
+      broken: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Profile</h1>\n<section>\n<h2>Name\n<p>John Doe\n<h2>Bio\n<p>Web Developer\n</section>\n</body>\n</html>`,
+      fixed: `<!DOCTYPE html>\n<html>\n<body>\n<h1>Profile</h1>\n<section>\n<h2>Name</h2>\n<p>John Doe</p>\n<h2>Bio</h2>\n<p>Web Developer</p>\n</section>\n</body>\n</html>`
+    }
+    ];
+    
+
+    let currentLevel = 0;
+
+    function populateLevels() {
+      const levelSelect = document.getElementById('levelSelect');
+      levels.forEach((level, i) => {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = level.name;
+        levelSelect.appendChild(option);
+      });
+    }
+
+    function loadLevel() {
+      currentLevel = document.getElementById('levelSelect').value;
+      document.getElementById('editor').value = levels[currentLevel].broken;
+      document.getElementById('expected').srcdoc = levels[currentLevel].fixed;
+      document.getElementById('message').textContent = "";
+      document.getElementById('preview').srcdoc = "";
+    }
+
+    function normalizeHTML(html) {
+      return html
+        .replace(/\s+/g, ' ')
+        .replace(/>\s+</g, '><')
+        .trim()
+        .toLowerCase();
+    }
+
+    function giveHint(userCode, fixedCode) {
+      const hints = [];
+      
+      if (!userCode.includes('<ul>') && fixedCode.includes('<ul>')) {
+        hints.push("You need to add a &lt;ul&gt; list tag to hold all of your &lt;li&gt; tags.");
+      }
+    const imgTags = [...userCode.matchAll(/<img[^>]*>/g)];
+    let alted;
+    imgTags.forEach(imgTag => {
+      if (!imgTag[0].includes('alt="') && !alted) {
+        hints.push("Ensure all <img> tags have an 'alt' attribute to describe the image.");
+        alted = true;
+      }
+    });
+      const unclosedTags = [];
+      const tagRegex = /<([a-z][a-z0-9]*)(?=\s|>|$)/gi; // Updated regex to include tags with numbers
+       tags = [...userCode.matchAll(tagRegex)].map(match => match[1]);
+      const tagCounts = {};
+    const autoClosingTags = ['img', 'input', 'br', 'hr', 'meta', 'link'];
+     tags = tags.filter(tag => !autoClosingTags.includes(tag));
+console.log(tags)
+      tags.forEach(tag => {
+        console.log(tag)
+        const openTagCount = (userCode.match(new RegExp(`<${tag}(?=\\s|>|$)`, 'gi')) || []).length;
+        const closeTagCount = (userCode.match(new RegExp(`</${tag}>`, 'gi')) || []).length;
+        tagCounts[tag] = (tagCounts[tag] || 0) + openTagCount - closeTagCount;
+      });
+
+      Object.keys(tagCounts).forEach(tag => {
+        if (tagCounts[tag] > 0) {
+          unclosedTags.push(tag);
+        }
+      });
+
+      if (unclosedTags.length > 0) {
+        hints.push(`You have unclosed tags: ${unclosedTags.map(tag => `&lt;${tag}&gt;`).join(', ')}.`);
+      }
+    if (currentLevel == 5) {
+      const inputs = [...userCode.matchAll(/<input[^>]*>/g)];
+      inputs.forEach(input => {
+        if (!input[0].includes('placeholder="')) {
+        hints.push("Ensure all input tags have a 'placeholder' attribute to guide the user.");
+        }
+      });
+    }
+      return hints;
+    }
+
+    function runCode() {
+      const userCode = document.getElementById('editor').value;
+      const preview = document.getElementById('preview');
+      preview.srcdoc = userCode;
+
+      const expectedHTML = levels[currentLevel].fixed;
+      const userNormalized = normalizeHTML(userCode);
+      const expectedNormalized = normalizeHTML(expectedHTML);
+
+      const message = document.getElementById('message');
+      if (userNormalized === expectedNormalized) {
+        message.textContent = "✅ Nice! Your HTML is correct.";
+      } else {
+        let hintList = giveHint(userCode, expectedHTML);
+        message.innerHTML = "❌ Not quite. Try to match the output exactly.";
+        if (hintList.length > 0) {
+          message.innerHTML += "<br><strong>Hints:</strong><ul><li>" + hintList.join('</li><li>') + "</li></ul>";
+        }
+      }
+    }
+
+    populateLevels();
+    loadLevel();
+  </script>
+</body>
+</html>
