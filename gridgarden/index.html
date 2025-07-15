@@ -10,35 +10,44 @@
 <body>
   <header> 
     <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
-    <h1>Dimension Games</h1>
-    <nav>
-      <a href="/" style="color: #fff; text-decoration: none; margin: 0 10px;">Home</a>
-      <a href="/about" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a>
-      <a href="/contact" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a>
-    </nav>
+    <h1>Grid Garden | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascipt">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
   </header>
-  <p>Flexbox Froggy is a game that teaches CSS Flexbox concepts in an interactive and fun way.</p>
-  <div style="text-align: center; width: 100%">
-    <iframe id="gameFrame" src="/gridgarden/game.html" width="90%" height="600"></iframe>
-    <br>
-    <button onclick="fs()" id="fs">
-      Fullscreen
-    </button>
-  </div>
-  <script>
-    function fs() {
-      const iframe = document.getElementById('gameFrame');
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) { 
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen();
+  <main>
+    <h2>How To Play</h2>
+    <p>Grid Garden is a fun and interactive game that teaches you CSS Grid by letting you grow your own garden. The goal is to water the carrots and avoid the weeds by writing CSS code to position the water correctly. Each level presents a new challenge, helping you learn and practice CSS Grid properties step by step.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/gridgarden/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+        const iframe = document.getElementById('gameFrame');
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { 
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
       }
-    }
-  </script>
+    </script>
+  </main>
   <footer>
     <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
 </footer>

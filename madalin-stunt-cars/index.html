@@ -1,26 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Madalin Stunt Cars 3 | 3kh0</title>
-  </head>
-  <link rel="icon" type="image/x-icon" href="img/index.jpg" />
-  <link rel="stylesheet" href="TemplateData/style.css" />
-  <script src="TemplateData/UnityProgress.js"></script>
-  <script src="js/unityloader35.js"></script>
-  <script src="/js/main.js"></script>
-  <body>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "game.json", {
-        onProgress: UnityProgress,
-        Module: {
-          onRuntimeInitialized: function () {
-            UnityProgress(gameInstance, "complete");
-          },
-        },
-      });
-    </script>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 100%; height: 100%; margin: auto;"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madalin Stunt Cars | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Madalin Stunt Cars | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Use WASD or arrow keys to control your vehicle and C to change your view. Change its color to suit your style and preferences. Choose from three thrilling maps, each offering unique challenges and environments. Experience realistic physics that bring your stunts to life, and push the limits with daring maneuvers and high-speed action. Get ready for an adrenaline-filled adventure!</p>
+    <h2>The Code</h2>
+    <p>Madalin Stunt Cars was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/madalin-stunt-cars/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
     </div>
-  </body>
+    <script>
+    function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
 </html>

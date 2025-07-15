@@ -1,0 +1,111 @@
+{
+    "css": [
+        {
+            "name": "Flexbox Froggy",
+            "path": "/flexboxfroggy/",
+            "icon": "/flexboxfroggy/favicon.ico"
+        },
+        {
+            "name": "Grid Garden",
+            "path": "/gridgarden/",
+            "icon": "/gridgarden/favicon.ico"
+        },
+        {
+            "name": "CSS Diner",
+            "path": "/css-diner/",
+            "icon": "/css-dinner/favicon.png"
+        },
+        {
+            "name": "CSS Speedrun",
+            "path": "/css-speedrun/",
+            "icon": "/css-speedrun/assets/favicon.png"
+        }
+    ],
+    "justForFun": [
+{
+    "name": "Basket Random",
+    "path": "/basket-random/",
+    "icon": "/basket-random/logo.png"
+},
+{
+    "name": "Basketball Stars",
+    "path": "/basketball-stars/",
+    "icon": "/basketball-stars/basketball-stars.png"
+},
+{
+    "name": "Cannon Basketball",
+    "path": "/cannon-basketball/",
+    "icon": "/cannon-basketball/logo.webp"
+},
+{
+    "name": "Cluster Rush",
+    "path": "/cluster-rush/",
+    "icon": "/cluster-rush/logo.jpg"
+},
+{
+    "name": "Deadly Descent",
+    "path": "/deadly-descent/",
+    "icon": "/deadly-descent/icon.png"
+},
+{
+    "name": "Drift Boss",
+    "path": "/drift-boss/",
+    "icon": "/drift-boss/drift-boss.png"
+},
+{
+    "name": "Drive Mad",
+    "path": "/drive-mad/",
+    "icon": "/drive-mad/webapp/cover.jpg"
+},
+{
+    "name": "Eaglecraft",
+    "path": "/eaglecraft/",
+    "icon": "/eaglecraft/logo.svg"
+},
+{
+    "name": "Highway Racer",
+    "path": "/highway-racer/",
+    "icon": "/highway-racer/logo.png"
+},
+{
+    "name": "Madalin Stunt Cars",
+    "path": "/madalin-stunt-cars/",
+    "icon": "/madalin-stunt-cars/img/index.jpg"
+},
+{
+    "name": "Moto X3M",
+    "path": "/moto-x3m/",
+    "icon": "/moto-x3m/moto-x3m.png"
+},
+{
+    "name": "Moto X3M 2",
+    "path": "/moto-x3m-2/",
+    "icon": "/moto-x3m-2/logo.jpg"
+},
+{
+    "name": "Moto X3M Winter",
+    "path": "/moto-x3m-winter/",
+    "icon": "/moto-x3m-winter/logo.avif"
+},
+{
+    "name": "Moto X3M Pool Party",
+    "path": "/moto-x3m-pool-party/",
+    "icon": "/moto-x3m-pool-party/logo.avif"
+},
+{
+    "name": "Moto X3M Spooky Land",
+    "path": "/moto-x3m-spooky-land/",
+    "icon": "/moto-x3m-spooky-land/logo.avif"
+},
+{
+    "name": "PolyTrack",
+    "path": "/polytrack/",
+    "icon": "/polytrack/logo.jpg"
+},
+{
+    "name": "Retro Bowl",
+    "path": "/retro-bowl/",
+    "icon": "/retro-bowl/img/icon.jpg"
+}
+    ]
+}

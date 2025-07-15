@@ -1,85 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
-    <title>Basketball Stars Unblocked</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="js/fullscreen.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Stars | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
 </head>
-
 <body>
-    <div id="content"></div>
-    <div id="orientation"></div>
-    <div id="loader">Loading ...</div>
-    <script type="text/javascript" src="assets/box2dweb/nape.min.js">
-        var nape = "nape.min.js";
-    </script>
-    <script type="text/javascript" src="assets/box2dweb/nape-debug-draw.min.js"></script>
-    <script type="text/javascript" src="assets/box2dweb/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="assets/box2dweb/easeljs-0.8.2.combined.js"></script>
-    <script type="text/javascript" src="assets/box2dweb/bluebird.min.js"></script>
-
-
-
-    <script type="text/javascript">
-    var useEvents = (typeof(Event) === 'function');
-
-        var myDispatchEvent = function (name){
-            var event;
-            if (useEvents){
-                event =  new Event(name);
-            }else{
-                event = document.createEvent('Event');
-                event.initEvent(name, true, true);
-            }
-            document.getElementById("content").dispatchEvent(event);
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Basketball Stars | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Basketball Stars is an exciting multiplayer basketball game where players compete in one-on-one matches. The objective is to score more points than your opponent within the time limit. Players can perform various moves such as dribbling, shooting, and blocking to outplay their opponent.</p>
+    <h2>The Code</h2>
+    <p>Basketball Stars is built using the Phaser library, a powerful framework for creating web-based games with JavaScript. Learn more about Phaser by visiting their <a href="https://phaser.io/" target="_blank">official website</a>.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/basketball-stars/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+        const iframe = document.getElementById('gameFrame');
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { 
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
         }
-
-        window["GD_OPTIONS"] = {
-                "gameId": "69d78d071f704fa183d75b4114ae40ec",
-                "onEvent": function(event) {
-                    switch (event.name) {
-                        case "SDK_GAME_START":
-                            // advertisement done, resume game logic and unmute audio
-                            myDispatchEvent('SDK_GAME_START');
-                            break;
-                        case "SDK_GAME_PAUSE":
-                            // pause game logic / mute audio
-                            myDispatchEvent('SDK_GAME_PAUSE');
-                            // document.getElementById("content").dispatchEvent(new Event("SDK_GAME_PAUSE"));
-                            break;
-                        case "SDK_GDPR_TRACKING":
-                            // this event is triggered when your user doesn't want to be tracked
-                            console.log("SDK_GDPR_TRACKING");
-                            break;
-                        case "SDK_GDPR_TARGETING":
-                            // this event is triggered when your user doesn't want personalised targeting of ads and such
-                            console.log("SDK_GDPR_TARGETING");
-                            break;
-                        case "SDK_READY":
-                            // this event is triggered when your user doesn't want personalised targeting of ads and such
-                            console.log("SDK_READY");
-                            // gdsdk.openConsole();
-                            break;
-                    }
-                },
-            };
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = 'js//main.min.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'gamedistribution-jssdk'));
+      }
     </script>
-<script type="text/javascript" src="basketball_legends_2019.min.js"></script>
-<script src="js/analytics_ubg_v1_4.js"></script>
-
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
 </body>
-
 </html>

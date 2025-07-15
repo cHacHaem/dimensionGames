@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just For Fun | Dimension Games</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header> 
+        <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+        <h1>Just For Fun | Dimension Games</h1>
+            <hr>
+            <nav>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/css">CSS</a></li>
+                    <li><a href="/html">HTML</a></li>
+                    <li><a href="/javascipt">Javascript</a></li>
+                    <li><a href="/just-for-fun">Just For Fun</a></li>
+                </ul>
+            </nav>
+      </header>
+    <main>
+        <section>
+            <h2>Explore Just For Fun Games</h2>
+            <p>Welcome to the Just For Fun page!</p>
+            <br>
+            <p>We all need a little break sometimes, but here you'll find fun games to keep your mind engaged.</p>
+            <br>
+            <p>Since this is Dimension Games, we've made sure to keep things educational. Most games will include an explanation of how it was created, so you can learn to create something similar yourself.</p>
+            <div class="game-grid">
+            
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
+    <script>
+        fetch('/games.json')
+            .then(response => response.json())
+            .then(data => {
+                const gameGrid = document.querySelector('.game-grid');
+                data.justForFun.forEach(game => {
+                    const gameItem = document.createElement('a');
+                    gameItem.href = game.path;
+                    gameItem.className = 'game-item';
+
+                    const gameIcon = document.createElement('img');
+                    gameIcon.src = game.icon;
+                    gameIcon.alt = game.name;
+
+                    const gameName = document.createElement('span');
+                    gameName.textContent = game.name;
+
+                    gameItem.appendChild(gameIcon);
+                    gameItem.appendChild(gameName);
+                    gameGrid.appendChild(gameItem);
+                });
+            })
+            .catch(error => console.error('Error loading games:', error));
+    </script>
+</body>
+</html>

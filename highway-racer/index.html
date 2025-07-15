@@ -1,35 +1,65 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Highway Racer 3D Unblocked - ubg235 GameDistribution</title>
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="patch/unity/TemplateData/style.css">
-  <script src="patch/unity/TemplateData/UnityProgress.js"></script>
-  <script src="Build/UnityLoader.js"></script>
-  <!-- <script src="js/unity-mod.js"></script> -->
-  <script>
-    function fixGameView() {
-      const gameView= document.getElementById("gameView");
-      if (gameView.clientHeight> gameView.clientWidth) {
-        gameView.style.height= Math.floor(gameView.clientWidth)+ "px";
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highway Racer | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Highway Racer | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Customize your car and take on the perilous highway, where you'll need to skillfully navigate through traffic at high speeds. Choose from 4 thrilling game modes: Time Attack, Speed Bomb, One-Way, and Two-Way, each offering unique challenges to test your driving prowess. Push your limits and dominate the road!</p>
+    <h2>The Code</h2>
+    <p>Highway Racer was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/highway-racer/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+    function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
       }
     }
-  var gameInstance = UnityLoader.instantiate(
-    "gameContainer",
-    "Build/highwat_racer_gd_v5.json", {
-      onProgress: UnityProgress,Module:{
-        onRuntimeInitialized: function() {
-          UnityProgress(gameInstance, "complete")
-        }
-      }
-    });
-  </script>
-</head>
-<body style="overflow:hidden; margin:0; padding:0;" onload="fixGameView()">
-  <div id="gameView" class="webgl-content" style="overflow:hidden; width:100%; height:100%; margin:0; padding:0; position:absolute;">
-    <div id="gameContainer" style="width: 100%; height: 100%;"></div>
-  </div>  
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
 </body>
 </html>

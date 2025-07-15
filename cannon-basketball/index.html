@@ -1,20 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Cannon Basketball 4 Unblocked - Unblocked Games 66</title>
-    <link rel="icon" type="image/x-icon" href="img/splash.png" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/splash.png" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <script src="js/vendor/pixi.js"></script>
-    <script src="js/vendor/Box2D.js"></script>
-    <script src="js/vendor/TweenMax.js"></script>
-    <script src="js/vendor/pixi-sound.js"></script>
-	 <script type="text/javascript" src="patch/js/null.js?controls.js"></script>
-  </head>
-  <body style="overflow:hidden;">
-    <div id="msg"></div>
-    <script src="js/index.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cannon Basketball | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Cannon Basketball | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Cannon Basketball is a fun and engaging game where players use a cannon to shoot basketballs into hoops. The objective is to aim carefully and adjust the power of the cannon to score points by getting the basketball into the hoop. The game challenges players with different levels, obstacles, and varying hoop positions.</p>
+   <p> To play, use the controls provided in the game interface to adjust the angle and power of the cannon. Once you're ready, fire the basketball and try to score! </p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/cannon-basketball/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+        const iframe = document.getElementById('gameFrame');
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { 
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
 </html>
