@@ -156,6 +156,11 @@
     "name": "Vex 6",
     "path": "/vex-6/",
     "icon": "/vex-6/icon.png"
+},
+{
+    "name": "Crossy Road",
+    "path": "/crossy-road/",
+    "icon": "/crossy-road/sprites/chicken.png"
 }
     ]
 }

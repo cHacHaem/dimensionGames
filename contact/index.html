@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="/style.css"> 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f4;
+        main {
+            width: 100%;
+            padding: 20px;
         }
         .contact-container {
             max-width: 800px;
             width: 90%; /* Adjust width for smaller screens */
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
+            margin: 0 auto; /* Centers the container */
         }
         iframe {
             width: 100%;
-            height: 70vh; /* Adjust height for better responsiveness */
+            height: 1050px; /* Adjust height for better responsiveness */
             border: none;
         }
     </style>
+    
 </head>
 <body>
-    <div class="contact-container">
-        <h1>Contact Us</h1>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSz27kMN4d12FPg_ioNLRrxm0pMAB_YBGtmp9PZqJu4qZA-Q/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
+    <header> 
+        <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+        <h1>Dimension Games</h1>
+            <hr>
+            <nav>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/css">CSS</a></li>
+                    <li><a href="/html">HTML</a></li>
+                    <li><a href="/javascript">Javascript</a></li>
+                    <li><a href="/just-for-fun">Just For Fun</a></li>
+                </ul>
+            </nav>
+      </header>
+      <main>
+        <div class="contact-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSz27kMN4d12FPg_ioNLRrxm0pMAB_YBGtmp9PZqJu4qZA-Q/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </main>
+      <footer>
+        <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
 </body>
 </html>

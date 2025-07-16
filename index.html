@@ -4,40 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dimension Games</title>
-<link rel ="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
 </head>
 <body>
-    <h1>Dimension Games</h1>
-    <p>Dimension Games helps teach coding in a fun and engaging way. Weather you need to start from scratch or sharpen your skills,
-        you can learn to code with css, html, javascript, and python. Coding is the language of the future, and Dimension Games is here to help you learn it.
-        <br>
-        <br>
-        We're not one of those sites that prioritizes quality over quantity, we have both! 
-        No matter which game you choose, you're guaranteed an great coding experience.
-        <br>
-        <br>
-        So what are you waiting for? Get coding!
-    </p>
-    <a href="/basket-random/">Basket Random</a>
-    <a href="/basketball-stars/">Basketball Stars</a>
-    <a href="/poly-track/">Poly Track</a>
-    <a href="/madalin-stunt-cars/">Madalin Stunt Cars 3</a>
-    <a href="/tunnel-rush-/">Tunnel Rush</a>
-    <a href="/eaglecraft/">Eaglecraft</a>
-    <a href="/highway-racer/">Highway Racer 3D</a>
-    <a href="/super-liquid-soccer-/">Super Liquid Soccer</a>
-    <a href="/soccer-random-/">Soccer Random</a>
-    <a href="/cannon-basketball/">Cannon Basketball 4</a>
-    <a href="/rocket-soccer-derby/">Rocket Soccer Derby</a>
-    <a href="/snow-rider-3D/">Snow Rider 3D</a>
-    <a href="/drive-mad/">Drive Mad</a>
-    <a href="/vex-6/">Vex 6</a>
-    <a href="/tiny-fishing/">Tiny Fishing</a>
-    <a href="/flexboxfroggy/">Flex Box Froggy</a>
-    <a href="/sandboxels/">Sandboxels</a>
-    <a href="/retro-bowl/">Retro Bowl</a>
-    <a href="/slope/">Slope</a>
-    <a href="/moto3xm/">MotoX3m</a>
-    <a href="drift-boss/">Drift Boss</a>
+    <header> 
+        <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+        <h1>Dimension Games</h1>
+            <hr>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/css">CSS</a></li>
+                    <li><a href="/html">HTML</a></li>
+                    <li><a href="/javascript">Javascript</a></li>
+                    <li><a href="/just-for-fun">Just For Fun</a></li>
+                </ul>
+            </nav>
+      </header>
+      <main>
+        <p>Dimension Games helps teach coding in a fun and engaging way. Whether you need to start from scratch or sharpen your skills,
+            you can learn to code with<br> <a href="/css">css</a>, <a href="/html">html</a>, and <a href="/javascript">javascript</a>. Coding is the language of the future, and Dimension Games is here to help you learn it.
+            </p>
+            <p> We're not one of those sites that prioritizes quality over quantity, we have both!</p> 
+           <p>No matter which game you choose, you're guaranteed an great coding experience.</p> 
+           <p>So what are you waiting for? Get coding!</p>
+        <h2>Featured Games</h2>
+        <p>Try out one of these games to get started!</p>
+        <div class="game-grid">
+        </div>
+           <script>
+            fetch('/games.json')
+                .then(response => response.json())
+                .then(data => {
+                    const gameGrid = document.querySelector('.game-grid');
+                    let game = data.css[Math.floor(Math.random() * data.css.length)]
+                    const gameItem = document.createElement('a');
+                        gameItem.href = game.path;
+                        gameItem.className = 'game-item';
+    
+                        const gameIcon = document.createElement('img');
+                        gameIcon.src = game.icon;
+                        gameIcon.alt = game.name;
+    
+                        const gameName = document.createElement('span');
+                        gameName.textContent = game.name;
+    
+                        gameItem.appendChild(gameIcon);
+                        gameItem.appendChild(gameName);
+                        gameGrid.appendChild(gameItem);
+                })
+                .catch(error => console.error('Error loading games:', error));
+        </script>
+      </main>
+      <footer>
+        <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
 </body>
 </html>
