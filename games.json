@@ -1,4 +1,11 @@
 {
+    "javascript": [
+        {
+            "name": "Elevator Saga",
+        "path": "/elevator-saga/",
+        "icon": "/elevator-saga/icon.jpg"
+    }
+    ],
     "css": [
         {
             "name": "Flexbox Froggy",

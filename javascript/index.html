@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Games | Dimension Games</title>
+    <title>JavaScript Games | Dimension Games</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header> 
         <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
-        <h1>CSS Games  | Dimension Games</h1>
+        <h1>JavaScript Games  | Dimension Games</h1>
             <hr>
             <nav>
                 <ul>
@@ -18,21 +18,25 @@
                     <li><a href="/contact/">Contact</a></li>
                     <li><a href="/css">CSS</a></li>
                     <li><a href="/html">HTML</a></li>
-                    <li><a href="/javascript">Javascript</a></li>
+                    <li><a href="/javascipt">Javascript</a></li>
                     <li><a href="/just-for-fun">Just For Fun</a></li>
                 </ul>
             </nav>
       </header>
     <main>
         <section>
-            <h2>Explore CSS Games</h2>
-            <p>Welcome to the CSS Games page! Here you can find interactive games to learn and improve your CSS skills.</p>
+            <h2>Explore JavaScript Games</h2>
+            <p>Welcome to the JavaScript Games page! Here you can find interactive games to learn and improve your JavaScript skills.</p>
+           <br>
+           <p>None of the games on this website would work without JavaScript, the page itself wouldn't even be complete!</p>
+                       <br>
+    <p>JavaScript is one of the foundational languages for web pages because it brings them to life with interactivity and dynamic content.</p>
+ 
             <br>
-            <p>CSS is one of the foundational languages that is a necessity for web pages so they don't look super boring.</p>
+            <p>A web page without JavaScript is like a car without an engine.</p>
             <br>
-            <p>A web page without CSS is like a painting without color.</p>
-            <br>
-            <p>Check out the games below to learn more about CSS!
+            <p>
+            Check out the games below to learn more about JavaScript!
             </p>
             <div class="game-grid">
                
@@ -47,7 +51,7 @@
             .then(response => response.json())
             .then(data => {
                 const gameGrid = document.querySelector('.game-grid');
-                data.css.forEach(game => {
+                data.javascript.forEach(game => {
                     const gameItem = document.createElement('a');
                     gameItem.href = game.path;
                     gameItem.className = 'game-item';
