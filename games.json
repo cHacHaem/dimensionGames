@@ -151,6 +151,11 @@
     "name": "Tunnel Rush",
     "path": "/tunnel-rush/",
     "icon": "/tunnel-rush/tunnel-rush.png"
+},
+{
+    "name": "Vex 6",
+    "path": "/vex-6/",
+    "icon": "/vex-6/icon.png"
 }
     ]
 }
