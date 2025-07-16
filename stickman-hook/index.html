@@ -1,40 +1,63 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-    <meta charset="utf-8" />
-    <title>Masked's Game Hub 2.0 - Stickman Hook</title>
-    <link rel="shortcut icon" href="../../images/ico.ico">
-    <script src="../../storage/js/cloak.js"></script>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
-    />
-
-    <style>
-      html,
-      body {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        overflow: hidden;
-        width: 100vw;
-        height: 100vh;
-        background-color: black;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickman Hook | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Stickman Hook | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Stickman Hook is a fun and challenging physics-based game where you control a stickman swinging through various levels using a grappling hook. Click or hold the spacebar to shoot the hook at surfaces, then swing and release to navigate through obstacles and reach the finish line. Timing and precision are key as you try to avoid falling or crashing into hazards. Enjoy the thrill of swinging and mastering each level!
+    </p>
+      <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/stickman-hook/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+       
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+      
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+     
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        });
       }
-      canvas {
-        width: 100%;
-      }
-    </style>
-
-    <!-- Poki SDK -->
-    <script src="poki3.js"></script>
-  </head>
-  <body>
-
-    <script src="bundle.js"></script>
-  </body>
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
 </html>

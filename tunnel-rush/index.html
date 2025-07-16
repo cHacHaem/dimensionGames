@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocket Soccer Derby | Dimension Games</title>
+  <title>Tunnel Rush | Dimension Games</title>
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/style.css"> 
 </head>
 <body>
   <header> 
     <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
-    <h1>Rocket Soccer Derby | Dimension Games</h1>
+    <h1>Tunnel Rush | Dimension Games</h1>
         <hr>
         <nav>
             <ul>
@@ -25,14 +25,12 @@
   </header>
   <main>
     <h2>How To Play</h2>
-    <p>Rocket Soccer Derby is a fast-paced, physics driven online and offline car sports game where you drive rocket boosted vehicles on a soccer field and smash a giant ball into your opponent's goal using intuitive controls—WASD or arrow keys to steer, Shift for nitro boost, Spacebar to jump, and F to lock the camera on the ball.
-        You can play solo against AI or team up in 2 or 3 player modes, climbing from beginner to expert leagues while customizing your car's appearance and performance.
-       Mastering aerial maneuvers, timing boosts and jumps, and positioning yourself defensively or offensively are key to outscoring opponents in short, explosive matches.</p>
+    <p>Tunnel Rush is a fast-paced 3D game where you navigate through an endless tunnel filled with obstacles. Use the arrow keys or WASD to steer left and right, avoiding walls and barriers as you speed through the tunnel. The goal is to survive as long as possible. The game gets progressively faster and more challenging, so quick reflexes and sharp focus are key to achieving a high score!</p>
+    </p>
   <h2>The Code</h2>
-    <p>Rocket Soccer Derby
-         was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
-    <div style="text-align: center; width: 100%">
-      <iframe id="gameFrame" src="/rocket-soccer-derby/game.html" width="90%" height="600"></iframe>
+  <p>Tunnel Rush was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
+      <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/tunnel-rush/game.html" width="90%" height="600"></iframe>
       <br>
       <button onclick="fs()" id="fs">
         Fullscreen
@@ -43,19 +41,18 @@
       const iframe = document.getElementById('gameFrame');
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen().then(() => {
-        
+       
         });
       } else if (iframe.mozRequestFullScreen) { 
         iframe.mozRequestFullScreen().then(() => {
-       
+      
         });
       } else if (iframe.webkitRequestFullscreen) {
         iframe.webkitRequestFullscreen().then(() => {
-       
+     
         });
       } else if (iframe.msRequestFullscreen) {
         iframe.msRequestFullscreen().then(() => {
-    
         });
       }
     }

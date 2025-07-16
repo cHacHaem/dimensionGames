@@ -1,60 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- Adsense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8024356722027062"
-     crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKK1BVCT2G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VKK1BVCT2G');
-</script>
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="TemplateData/unityloader41.js"></script>
-    <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2541434264715219"
-     crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2541434264715219"
-     crossorigin="anonymous"></script>
-    <style>
-  
-
-        .closebtn {
-          margin-left: 15px;
-          color: white;
-          p {text-align: center;}  
-          font-weight: bold;
-          float: right;
-          font-size: 22px;
-          line-height: 20px;
-          cursor: pointer;
-          transition: 0.3s;
-        }
-
-        .closebtn:hover {
-          color: black;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slope | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
 </head>
-
-<!--- 
-Want to run or host yourself? Check out the source? 
-https://github.com/cgolden15/Slope-Game/ 
-
-Drop a star on the repo if you enjoy.
---->
-
-<body style="margin: 0; overflow: hidden;">
-    <div class="webgl-content">
-        <div id="gameContainer" style="width: 100%; height: 100%; margin: 0;"></div>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Slope | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Slope is a thrilling, high-speed arcade game where you control a rolling ball hurtling down an endless, neon-lit slope filled with sudden drops, razor-thin paths, and unpredictable obstacles. Using the A/D keys or arrow keys, you’ll weave left and right with lightning reflexes, dodging danger and aiming to survive as long as possible. The farther you go, the faster it gets—how long can you stay on the edge without falling? Chase the highest score in this pulse-pounding test of skill and focus!
+    </p>
+  <h2>The Code</h2>
+    <p>Highway Racer was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/slope/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
     </div>
-    <!-- <a title="GDPR-compliant Web Analytics" href="https://clicky.com/101393847"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a> -->
-    <script async src="//static.getclicky.com/101393847.js"></script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101393847ns.gif" /></p></noscript>
+    <script>
+      function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+            iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+            iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+            iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+            iframe.contentWindow.location.reload();
+        });
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
 </body>
-<!-- Slope game by y8 games, not me.-->
+</html>

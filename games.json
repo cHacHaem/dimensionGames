@@ -106,6 +106,51 @@
     "name": "Retro Bowl",
     "path": "/retro-bowl/",
     "icon": "/retro-bowl/img/icon.jpg"
+},
+{
+    "name": "Rocket Soccer Derby",
+    "path": "/rocket-soccer-derby/",
+    "icon": "/rocket-soccer-derby/screenshots/3.jpg"
+},
+{
+    "name": "Sandboxels",
+    "path": "/sandboxels/",
+    "icon": "/sandboxels/logo.jpg"
+},
+{
+    "name": "Slope",
+    "path": "/slope/",
+    "icon": "/slope/logo.png"
+},
+{
+    "name": "Snow Rider 3D",
+    "path": "/snow-rider-3D/",
+    "icon": "/snow-rider-3D/TemplateData/logo.png"
+},
+{
+    "name": "Soccer Random",
+    "path": "/soccer-random/",
+    "icon": "/soccer-random/logo.png"
+},
+{
+    "name": "Stickman Hook",
+    "path": "/stickman-hook/",
+    "icon": "/stickman-hook/icon.jpg"
+},
+{
+    "name": "Super Liquid Soccer",
+    "path": "/super-liquid-soccer/",
+    "icon": "/super-liquid-soccer/logo.avif"
+},
+{
+    "name": "Tiny Fishing",
+    "path": "/tiny-fishing/",
+    "icon": "/tiny-fishing/thumb.png"
+},
+{
+    "name": "Tunnel Rush",
+    "path": "/tunnel-rush/",
+    "icon": "/tunnel-rush/tunnel-rush.png"
 }
     ]
 }
