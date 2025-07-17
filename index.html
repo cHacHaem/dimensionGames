@@ -32,6 +32,7 @@
            <p>So what are you waiting for? Get coding!</p>
         <h2>Featured Games</h2>
         <p>Try out one of these games to get started!</p>
+        <p>We've chose one game from each language we have.</p>
         <div class="game-grid">
         </div>
            <script>
@@ -39,8 +40,8 @@
                 .then(response => response.json())
                 .then(data => {
                     const gameGrid = document.querySelector('.game-grid');
-                    let game = data.css[Math.floor(Math.random() * data.css.length)]
-                    const gameItem = document.createElement('a');
+                    function addGame(game) {
+                        const gameItem = document.createElement('a');
                         gameItem.href = game.path;
                         gameItem.className = 'game-item';
     
@@ -54,6 +55,10 @@
                         gameItem.appendChild(gameIcon);
                         gameItem.appendChild(gameName);
                         gameGrid.appendChild(gameItem);
+                    }
+                    addGame(data.css[Math.floor(Math.random() * data.css.length)]);
+                   // addGame(data.html[Math.floor(Math.random() * data.html.length)]);
+                    addGame(data.javascript[Math.floor(Math.random() * data.javascript.length)]);
                 })
                 .catch(error => console.error('Error loading games:', error));
         </script>

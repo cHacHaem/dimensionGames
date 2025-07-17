@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSRobot | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>JSRobot | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>
+        JSRobot is a programming game where you control a robot using JavaScript code. The goal is to navigate the robot through various levels, solving puzzles and overcoming obstacles by writing and executing JavaScript commands. As you progress, the challenges become more complex, requiring you to think critically and apply your coding skills to achieve success. It's a fun and interactive way to learn JavaScript while engaging in problem-solving activities.
+    </p>
+       <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/JSRobot/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

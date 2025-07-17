@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Games | Dimension Games</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header> 
+        <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+        <h1>HTML Games  | Dimension Games</h1>
+            <hr>
+            <nav>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/css">CSS</a></li>
+                    <li><a href="/html">HTML</a></li>
+                    <li><a href="/javascript">Javascript</a></li>
+                    <li><a href="/just-for-fun">Just For Fun</a></li>
+                </ul>
+            </nav>
+      </header>
+    <main>
+        <section>
+            <h2>Explore HTML Games</h2>
+            <p>Welcome to the HTML Games page! Here you can find interactive games to learn and improve your HTML skills.</p>
+            <br>
+            <p>HTML (HyperText Markup Language) is the foundation of nearly every website on the internet.</p>
+            <br>
+            <p>100% of websites use HTML in some form.</p>
+            <br>
+            <p>In fact, your looking at an HTML file right now!
+            </p>
+            <br>
+            <p>Luckily, it's super easy to learn. Check out the games below to learn more about HTML.</p>
+            <div class="game-grid">
+               
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
+    <script>
+        fetch('/games.json')
+            .then(response => response.json())
+            .then(data => {
+                const gameGrid = document.querySelector('.game-grid');
+                data.html.forEach(game => {
+                    const gameItem = document.createElement('a');
+                    gameItem.href = game.path;
+                    gameItem.className = 'game-item';
+
+                    const gameIcon = document.createElement('img');
+                    gameIcon.src = game.icon;
+                    gameIcon.alt = game.name;
+
+                    const gameName = document.createElement('span');
+                    gameName.textContent = game.name;
+
+                    gameItem.appendChild(gameIcon);
+                    gameItem.appendChild(gameName);
+                    gameGrid.appendChild(gameItem);
+                });
+            })
+            .catch(error => console.error('Error loading games:', error));
+    </script>
+</body>
+</html>

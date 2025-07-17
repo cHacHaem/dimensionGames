@@ -1,10 +1,27 @@
 {
+    "html": [
+        {
+            "name": "Tag Master",
+        "path": "/tag-master/",
+        "icon": "/tag-master/image1.png"
+    }
+    ],
     "javascript": [
         {
             "name": "Elevator Saga",
         "path": "/elevator-saga/",
         "icon": "/elevator-saga/icon.jpg"
-    }
+    },
+    {
+        "name": "JSRobot",
+    "path": "/JSRobot/",
+    "icon": "/JSRobot/images/robot1.png"
+},
+{
+    "name": "Untrusted",
+"path": "/untrusted/",
+"icon": "/untrusted/favicon.ico"
+}
     ],
     "css": [
         {
