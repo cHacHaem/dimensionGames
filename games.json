@@ -3,8 +3,13 @@
         {
             "name": "Tag Master",
         "path": "/tag-master/",
-        "icon": "/tag-master/image1.png"
-    }
+        "icon": "/tag-master/icon.png"
+    },
+    {
+        "name": "Site Craft",
+    "path": "/site-craft/",
+    "icon": "/site-craft/icon.png"
+}
     ],
     "javascript": [
         {
@@ -182,9 +187,49 @@
     "icon": "/vex-6/icon.png"
 },
 {
+    "name": "Vex 4",
+    "path": "/vex-4/",
+    "icon": "/vex-4/icon.png"
+},
+{
+    "name": "Vex 5",
+    "path": "/vex-5/",
+    "icon": "/vex-5/icon.png"
+},
+{
+    "name": "Vex 7",
+    "path": "/vex-7/",
+    "icon": "/vex-7/icon.webp"
+},
+{
+    "name": "Vex 8",
+    "path": "/vex-8/",
+    "icon": "/vex-8/icon.avif"
+},
+{
     "name": "Crossy Road",
     "path": "/crossy-road/",
     "icon": "/crossy-road/sprites/chicken.png"
+},
+{
+    "name": "Icy Purple Head 2",
+    "path": "/icy-purple-head-2/",
+    "icon": "/icy-purple-head-2/loading-logo.png"
+},
+{
+    "name": "Fruit Ninja",
+    "path": "/fruit-ninja/",
+    "icon": "/fruit-ninja/icon.png"
+},
+{
+    "name": "Tag",
+    "path": "/tag/",
+    "icon": "/tag/icon.jpeg"
+},
+{
+    "name": "Unicycle Hero",
+    "path": "/unicycle-hero/",
+    "icon": "/unicycle-hero/icon.png"
 }
     ]
 }

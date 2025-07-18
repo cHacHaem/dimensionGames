@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Search | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>Search Games</h2>
+    <input type="text" id="searchInput" placeholder="Search for games..." onkeyup="filterGames()">
+    <div class="game-grid">
+      <!-- Games will be dynamically loaded here -->
+    </div>
+    <script>
+        let games = [];
+        let searchInput = document.getElementById('searchInput');
+        let gameGrid = document.querySelector('.game-grid');
+        fetch('/games.json')
+            .then(response => response.json())
+            .then(data => {
+                data.css.forEach(game => {
+                    games.push(game)
+                });
+                data.html.forEach(game => {
+                    games.push(game)
+                });
+                data.javascript.forEach(game => {
+                    games.push(game)
+                });
+                data.justForFun.forEach(game => {
+                    games.push(game)
+                });
+                filterGames();
+            })
+            .catch(error => console.error('Error loading games:', error));
+        function filterGames() {
+            let result;
+            let query = searchInput.value.toLowerCase();
+            gameGrid.innerHTML = '';
+            games.forEach(game => {
+                if (game.name.toLowerCase().includes(query) || !query) {
+                    result = true;
+                    const gameItem = document.createElement('a');
+                    gameItem.href = game.path;
+                    gameItem.className = 'game-item';
+
+                    const gameIcon = document.createElement('img');
+                    gameIcon.src = game.icon;
+                    gameIcon.alt = game.name;
+
+                    const gameName = document.createElement('span');
+                    gameName.textContent = game.name;
+
+                    gameItem.appendChild(gameIcon);
+                    gameItem.appendChild(gameName);
+                    gameGrid.appendChild(gameItem);
+        }
+                });
+                if (!result) {
+                    gameGrid.innerHTML = "<p>Can't find what your looking for...</p> <br><br> <p>Got a game in mind? Reach out <a href='/contact/'>here</a> — we're always looking for new games!</p><img src='/404.png' alt='magnifying glass' style='width:90%;'>";
+                }
+            }
+
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

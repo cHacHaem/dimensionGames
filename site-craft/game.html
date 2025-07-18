@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+    h1 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+    #editor {
+      width: 100%;
+      height: 200px;
+      font-family: monospace;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+    iframe {
+      width: 100%;
+      height: 150px;
+      border: 1px solid #aaa;
+      background: #fff;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      margin-right: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    button:disabled {
+  opacity: 0.5; 
+  cursor: not-allowed;
+}
+
+  </style>
+</head>
+<body>
+
+<h1>🔧 Site Craft</h1>
+<p id="prompt">Prompt: Add an &lt;h1&gt; tag that says "My Website"</p>
+
+<textarea id="editor" placeholder="Write your HTML here..."></textarea><br>
+<button onclick="checkAnswer()">Submit</button>
+<button onclick="nextLevel()" disabled id="next">Next Level</button>
+
+<h3>🔍 Live Preview:</h3>
+<iframe id="preview"></iframe>
+
+<div id="result"></div>
+
+<script>
+  let final = ""
+  const levels = [
+    {
+      prompt: 'Add an <h1> tag that says "My Website"',
+      check: doc => {
+        const h1 = doc.querySelector('h1');
+        return h1 && h1.textContent.trim() === 'My Website';
+      }
+    },
+    {
+      prompt: 'Add a <p> with some text in it',
+      check: doc => {
+        const p = doc.querySelector('p');
+        return p && p.textContent.trim().length > 0;
+      }
+    },
+    {
+      prompt: 'Add an <ul> with at least 2 <li> items',
+      check: doc => {
+        const items = doc.querySelectorAll('ul li');
+        return items.length >= 2;
+      }
+    },
+    {
+      prompt: 'Add an image using the <img> tag',
+      check: doc => {
+        const img = doc.querySelector('img');
+        return img && img.getAttribute('src');
+      }
+    }
+  ];
+
+  let currentLevel = 0;
+  const editor = document.getElementById('editor');
+  const result = document.getElementById('result');
+  const preview = document.getElementById('preview');
+  const prompt = document.getElementById('prompt');
+
+  function updatePreview() {
+    const code = editor.value;
+    const doc = preview.contentDocument || preview.contentWindow.document;
+    doc.open();
+    doc.write(code);
+    doc.close();
+  }
+
+  editor.addEventListener('input', updatePreview);
+
+  function checkAnswer() {
+    if (!levels[currentLevel]) {
+      result.textContent = '🎉 No more levels!';
+      return;
+    }
+    updatePreview();
+    const doc = preview.contentDocument || preview.contentWindow.document;
+    try {
+      const pass = levels[currentLevel].check(doc);
+      result.textContent = pass ? '✅ Correct!' : '❌ Try Again!';
+      document.getElementById('next').disabled = !pass;
+    } catch (e) {
+      result.textContent = '⚠️ Error in validation. Check your HTML.';
+      console.error(e);
+    }
+  }
+
+  function nextLevel() {
+    currentLevel++;
+    document.getElementById('next').disabled = true;
+    if (currentLevel >= levels.length) {
+      prompt.textContent = '🎉 You completed all the levels! This is your final website:';
+      editor.value = final + editor.value;
+      result.textContent = '';
+      updatePreview();
+      return;
+    }
+    final += editor.value + "\n";
+    editor.value = '';
+    updatePreview();
+    result.textContent = '';
+    prompt.textContent = 'Prompt: ' + levels[currentLevel].prompt;
+  }
+</script>
+
+</body>
+</html>

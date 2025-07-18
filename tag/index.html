@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Tag | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>
+
+Tag is a fun multiplayer game where players chase each other around a map trying to "tag" one another. Use the arrow keys, WASD, JIL, or FTH to move your character. Tag the another player before time runs out or you lose. Jump through portals and collect power-ups to evade the tagger. Stay quick and keep moving to avoid being tagged!
+    </p>
+    </p>
+  <h2>The Code</h2>
+  <p>
+    Tag is built using the <a href="https://phaser.io">Phaser</a> game framework. Phaser provides a robust set of tools for handling 2D graphics, input, physics, and more. 
+  </p>
+      <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/tag/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+       
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+      
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+     
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        });
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

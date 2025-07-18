@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icy Purple Head 2 | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Icy Purple Head 2 | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Icy Purple Head 2 is a challenging platformer game where you control a character with a large purple head navigating through icy levels filled with obstacles. Click to slide to the end of the level. The game features increasingly difficult stages that test your reflexes and platforming skills. Enjoy the fun and quirky art style while aiming for the best time on each level!
+         </p>
+         <h2>The Code</h2>
+         <p>
+          Icy Purple Head 2 is built using HTML5, JavaScript, and the Phaser game framework. The game leverages canvas rendering for smooth animations and responsive controls. The physics engine handles character movement and collision detection, providing an engaging gameplay experience. The code is optimized for performance across various browsers and devices, ensuring that players can enjoy the game seamlessly.
+         </p>
+       <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/icy-purple-head-2/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

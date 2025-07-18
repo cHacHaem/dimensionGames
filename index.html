@@ -20,6 +20,7 @@
                     <li><a href="/html">HTML</a></li>
                     <li><a href="/javascript">Javascript</a></li>
                     <li><a href="/just-for-fun">Just For Fun</a></li>
+                    <li><a href="/search">Search</a></li>
                 </ul>
             </nav>
       </header>
@@ -29,6 +30,7 @@
             </p>
             <p> We're not one of those sites that prioritizes quality over quantity, we have both!</p> 
            <p>No matter which game you choose, you're guaranteed an great coding experience.</p> 
+           <p>Got a game or feature in mind? Reach out <a href='/contact/'>here</a> — we're always growing thanks to awesome suggestions from our community!</p>
            <p>So what are you waiting for? Get coding!</p>
         <h2>Featured Games</h2>
         <p>Try out one of these games to get started!</p>
@@ -57,7 +59,7 @@
                         gameGrid.appendChild(gameItem);
                     }
                     addGame(data.css[Math.floor(Math.random() * data.css.length)]);
-                   // addGame(data.html[Math.floor(Math.random() * data.html.length)]);
+                    addGame(data.html[Math.floor(Math.random() * data.html.length)]);
                     addGame(data.javascript[Math.floor(Math.random() * data.javascript.length)]);
                 })
                 .catch(error => console.error('Error loading games:', error));
