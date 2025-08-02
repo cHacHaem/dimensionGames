@@ -217,6 +217,11 @@
     "icon": "/icy-purple-head-2/loading-logo.png"
 },
 {
+    "name": "Icy Purple Head 3",
+    "path": "/icy-purple-head-3/",
+    "icon": "/icy-purple-head-3/icon.jpeg"
+},
+{
     "name": "Fruit Ninja",
     "path": "/fruit-ninja/",
     "icon": "/fruit-ninja/icon.png"

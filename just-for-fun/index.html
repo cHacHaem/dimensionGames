@@ -43,27 +43,31 @@
     </footer>
     <script>
         fetch('/games.json')
-            .then(response => response.json())
-            .then(data => {
-                const gameGrid = document.querySelector('.game-grid');
-                data.justForFun.forEach(game => {
-                    const gameItem = document.createElement('a');
-                    gameItem.href = game.path;
-                    gameItem.className = 'game-item';
+  .then(response => response.json())
+  .then(data => {
+    const gameGrid = document.querySelector('.game-grid');
+    
+    const shuffledGames = data.justForFun.sort(() => Math.random() - 0.5);
 
-                    const gameIcon = document.createElement('img');
-                    gameIcon.src = game.icon;
-                    gameIcon.alt = game.name;
+    shuffledGames.forEach(game => {
+      const gameItem = document.createElement('a');
+      gameItem.href = game.path;
+      gameItem.className = 'game-item';
 
-                    const gameName = document.createElement('span');
-                    gameName.textContent = game.name;
+      const gameIcon = document.createElement('img');
+      gameIcon.src = game.icon;
+      gameIcon.alt = game.name;
 
-                    gameItem.appendChild(gameIcon);
-                    gameItem.appendChild(gameName);
-                    gameGrid.appendChild(gameItem);
-                });
-            })
-            .catch(error => console.error('Error loading games:', error));
+      const gameName = document.createElement('span');
+      gameName.textContent = game.name;
+
+      gameItem.appendChild(gameIcon);
+      gameItem.appendChild(gameName);
+      gameGrid.appendChild(gameItem);
+    });
+  })
+  .catch(error => console.error('Error loading games:', error));
+
     </script>
 </body>
 </html>
