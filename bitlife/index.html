@@ -1,36 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-7FN7LEVWXD');
-        </script>
-
-  
-    <title>BitLife | Seraph</title>
-    <script src="../../storage/js/cloak.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="../../images/ico.ico" type="image/x-icon">
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: black;
-      }
-    </style>
-	<script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
-    <script type="application/javascript" src="/js/main.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate("gameContainer", "Build/BitLife.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-  <div class="webgl-content">
-      <div id="gameContainer" style="width: 100%; height: 100%;"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitLife | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="description" content="Play Cluster Rush on Dimension Games, a thrilling game where you jump between moving trucks to reach the finish line.">
+  <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>BitLife | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>BitLife 
+        is a fun game where you can simulate a virtual life, making choices that affect your character's journey from birth to death. You can choose different paths, careers, relationships, and activities to see how they impact your life. The game offers a variety of scenarios and outcomes based on the decisions you make, allowing for endless replayability and exploration of different life experiences.
+    </p>
+    <h2>The Code</h2>
+    <p>BitLife was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/bitlife/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
     </div>
-  </body>
+    <script>
+     function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen().then(() => {
+        iframe.contentWindow.location.reload();
+        });
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
 </html>

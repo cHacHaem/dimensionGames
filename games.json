@@ -235,6 +235,11 @@
     "name": "Unicycle Hero",
     "path": "/unicycle-hero/",
     "icon": "/unicycle-hero/icon.png"
+},
+{
+    "name": "BitLife",
+    "path": "/bitlife/",
+    "icon": "/bitlife/logo.png"
 }
     ]
 }
