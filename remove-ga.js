@@ -1,19 +1,21 @@
-// remove-ga-from-game.js
+// remove-reload-from-index.js
 const fs = require("fs");
 const path = require("path");
 
 const directory = "./"; // root folder of your site
 
-function cleanGameFile(filePath) {
+function cleanIndexFile(filePath) {
   let html = fs.readFileSync(filePath, "utf8");
 
-  if (html.includes("googletagmanager.com/gtag")) {
-    // Remove everything between the GA comments
-    html = html.replace(/<!-- Google Analytics -->[\s\S]*?<!-- End Google Analytics -->/, "");
+  // Regex to remove the block, including whitespace and newlines
+  const regex = /\.then\(\s*?\(\)\s*?=>\s*?\{\s*?iframe\.contentWindow\.location\.reload\(\);\s*?\}\s*?\);/g;
+
+  if (regex.test(html)) {
+    html = html.replace(regex, "");
     fs.writeFileSync(filePath, html, "utf8");
-    console.log(`Removed GA from: ${filePath}`);
+    console.log(`Removed reload code from: ${filePath}`);
   } else {
-    console.log(`No GA found in: ${filePath}`);
+    console.log(`No reload code found in: ${filePath}`);
   }
 }
 
@@ -22,8 +24,8 @@ function walkDir(dir) {
     const filepath = path.join(dir, file);
     if (fs.statSync(filepath).isDirectory()) {
       walkDir(filepath);
-    } else if (file.endsWith("game.html")) {
-      cleanGameFile(filepath);
+    } else if (file === "index.html") {
+      cleanIndexFile(filepath);
     }
   });
 }

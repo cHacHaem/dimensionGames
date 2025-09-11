@@ -55,21 +55,13 @@
      function fs() {
       const iframe = document.getElementById('gameFrame');
       if (iframe.requestFullscreen) {
-        iframe.requestFullscreen().then(() => {
-        iframe.contentWindow.location.reload();
-        });
+        iframe.requestFullscreen()
       } else if (iframe.mozRequestFullScreen) { 
-        iframe.mozRequestFullScreen().then(() => {
-        iframe.contentWindow.location.reload();
-        });
+        iframe.mozRequestFullScreen()
       } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen().then(() => {
-        iframe.contentWindow.location.reload();
-        });
+        iframe.webkitRequestFullscreen()
       } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen().then(() => {
-        iframe.contentWindow.location.reload();
-        });
+        iframe.msRequestFullscreen()
       }
     }
     </script>
