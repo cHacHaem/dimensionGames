@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const siteUrl = "https://dimensioncoding.xyz"; // change this to your site
+const siteUrl = "https://www.dimensioncoding.xyz"; // change this to your site
 const directory = "./"; // root folder of your site
 
 // Exclusions: list any index.html you don't want
