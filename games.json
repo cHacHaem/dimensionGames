@@ -240,6 +240,11 @@
     "name": "BitLife",
     "path": "/bitlife/",
     "icon": "/bitlife/logo.png"
+},
+{
+    "name": "Paper.io 2",
+    "path": "/paper-io-2/",
+    "icon": "/paper-io-2/images/icon512.png"
 }
     ]
 }
