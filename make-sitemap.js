@@ -2,16 +2,17 @@
 const fs = require("fs");
 const path = require("path");
 
-const siteUrl = "https://www.dimensioncoding.xyz"; // change this to your site
-const directory = "./"; // root folder of your site
+const siteUrl = "https://dimensioncoding.xyz"; // change to your domain
+const directory = "./"; // root folder
 
 // Exclusions: list any index.html you don't want
 const exclude = [
-    "404/index.html",
+  "404/index.html"
 ];
 
 let urls = [];
 
+// Collect index.html files (only root and one folder deep)
 function collectIndexFiles(dir, depth = 0) {
   fs.readdirSync(dir).forEach((file) => {
     const filepath = path.join(dir, file);
@@ -22,7 +23,8 @@ function collectIndexFiles(dir, depth = 0) {
         collectIndexFiles(filepath, depth + 1); // only go one folder in
       }
     } else if (file === "index.html" && !exclude.includes(relativePath)) {
-      // Turn "folder/index.html" → "/folder/"
+      // Root index.html → /
+      // folder/index.html → /folder/
       let urlPath = "/" + relativePath.replace("index.html", "");
       urls.push(siteUrl + urlPath);
     }
@@ -31,11 +33,8 @@ function collectIndexFiles(dir, depth = 0) {
 
 collectIndexFiles(directory);
 
-// Build sitemap XML
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(url => `  <url><loc>${url}</loc></url>`).join("\n")}
-</urlset>`;
+// Build sitemap.txt
+const sitemap = urls.join("\n");
+fs.writeFileSync("sitemap.txt", sitemap, "utf8");
 
-fs.writeFileSync("sitemap.xml", sitemap, "utf8");
-console.log("✅ sitemap.xml created with", urls.length, "entries");
+console.log("✅ sitemap.txt created with", urls.length, "entries");
