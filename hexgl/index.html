@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HexGl | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+  <meta name="description" content="Play Paper.io 2 for free at Dimension Games! Enjoy this fun and addictive multiplayer game where you control a colored square, capture territory, and compete against other players.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MPFD90BY7J');
+</script>
+<!-- End Google Analytics -->
+
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>HexGl | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Use your arrow keys to navigate your ship through the futuristic track, keep up your speed, but avoid hitting the walls or you'll lose your speed and eventually get destroyed. How quick can you complete the course?</p>
+    <h2>The Code</h2>
+    <p>HexGl was built using <a href="https://threejs.org">Three.js</a> and WebGL for rendering 3D graphics in the browser. The game features real-time physics, dynamic lighting, and smooth animations to create an immersive racing experience. The code handles user input, game logic, and rendering to ensure a seamless gameplay experience.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/hexgl/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+    function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen()
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen()
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen()
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen()
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

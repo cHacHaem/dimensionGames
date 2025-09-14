@@ -17,6 +17,7 @@ https://dimensioncoding.xyz/elevator-saga/
 https://dimensioncoding.xyz/flexboxfroggy/
 https://dimensioncoding.xyz/fruit-ninja/
 https://dimensioncoding.xyz/gridgarden/
+https://dimensioncoding.xyz/hexgl/
 https://dimensioncoding.xyz/highway-racer/
 https://dimensioncoding.xyz/html/
 https://dimensioncoding.xyz/icy-purple-head-2/
@@ -43,6 +44,7 @@ https://dimensioncoding.xyz/snow-rider-3D/
 https://dimensioncoding.xyz/soccer-random/
 https://dimensioncoding.xyz/stickman-hook/
 https://dimensioncoding.xyz/super-liquid-soccer/
+https://dimensioncoding.xyz/t-rex-runner/
 https://dimensioncoding.xyz/tag/
 https://dimensioncoding.xyz/tag-master/
 https://dimensioncoding.xyz/terms/
