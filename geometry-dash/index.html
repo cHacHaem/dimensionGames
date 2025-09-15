@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometry Dash | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+  <meta name="description" content="Play Paper.io 2 for free at Dimension Games! Enjoy this fun and addictive multiplayer game where you control a colored square, capture territory, and compete against other players.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MPFD90BY7J');
+</script>
+<!-- End Google Analytics -->
+
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Geometry Dash | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Click the screen, use the up arrow key, or press space to make your character jump. Time your jumps to avoid obstacles and gaps in the level. The goal is to reach the end of the level without crashing into any obstacles. Collect coins along the way to complete the challenge.</p>
+    <h2>The Code</h2>
+    <p>This veresion of geometry dash was built entirely with HTML, CSS, and JavaScript, using the Canvas 2D API for graphics and the Web Audio API for music synchronization. Levels are stored as simple data arrays, the game loop handles physics and collision detection, and the illusion of forward movement is achieved by scrolling the world instead of the player. It's a lightweight, browser-native Geometry Dash clone.</p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/geometry-dash/wide/" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+    function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen()
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen()
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen()
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen()
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

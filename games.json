@@ -250,6 +250,11 @@
     "name": "HexGl",
     "path": "/hexgl/",
     "icon": "/hexgl/icon_256.png"
+},
+{
+    "name": "Geometry Dash",
+    "path": "/geometry-dash/",
+    "icon": "/geometry-dash/logo.webp"
 }
     ]
 }
