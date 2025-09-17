@@ -254,7 +254,12 @@
 {
     "name": "Geometry Dash",
     "path": "/geometry-dash/",
-    "icon": "/geometry-dash/logo.webp"
+    "icon": "/geometry-dash/icon.webp"
+},
+{
+    "name": "Dino Game",
+    "path": "/dino-game/",
+    "icon": "/dino-game/assets/default_100_percent/100-error-offline.png"
 }
     ]
 }

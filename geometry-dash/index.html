@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Geometry Dash | Dimension Games</title>
   <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="description" content="Play Geometry Dash for free on Dimension Games! Experience the popular rhythm-based platformer where you navigate a square through challenging levels filled with spikes, obstacles, and thrilling music. Test your reflexes and timing in this addictive game that combines fast-paced action with catchy tunes.">
   <link rel="stylesheet" href="/style.css"> 
-  <meta name="description" content="Play Geometry Dash for free on Dimension Games, a rhythm-based platformer game where you navigate a square through various obstacles by jumping and flying. Test your reflexes and timing in this challenging and addictive game.">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
@@ -39,18 +39,19 @@
   </header>
   <main>
     <h2>How To Play</h2>
-    <p>Click the screen, use the up arrow key, or press space to make your character jump. Time your jumps to avoid obstacles and gaps in the level. The goal is to reach the end of the level without crashing into any obstacles. Collect coins along the way to complete the challenge.</p>
+    <p>Geometry Dash is a fun and challenging rhythm-based platformer game where you control a square that jumps and flies through various levels filled with spikes, obstacles, and thrilling music. Click space, the screen, or the up arrow to jump. The objective is to navigate through each level by timing your jumps perfectly to avoid hazards and reach the end. As you progress, the levels become more complex and require quick reflexes and precise timing. With its catchy tunes and addictive gameplay, Geometry Dash offers an exciting experience for players of all ages.
+            </p>
     <h2>The Code</h2>
-    <p>This veresion of geometry dash was built entirely with HTML, CSS, and JavaScript, using the Canvas 2D API for graphics and the Web Audio API for music synchronization. Levels are stored as simple data arrays, the game loop handles physics and collision detection, and the illusion of forward movement is achieved by scrolling the world instead of the player. It's a lightweight, browser-native Geometry Dash clone.</p>
+    <p>This version of Geometry Dash was created using Unity, a powerful and versatile game engine widely used for developing both 2D and 3D games. Unity provides developers with tools to create immersive experiences, including physics simulations, rendering, and scripting capabilities. Learn more about Unity at <a href="https://unity.com" target="_blank">Unity's official website</a>.</p>
     <div style="text-align: center; width: 100%">
-      <iframe id="gameFrame" src="/geometry-dash/wide/" width="90%" height="600"></iframe>
+      <iframe id="gameFrame" src="/geometry-dash/game.html" width="90%" height="600"></iframe>
       <br>
       <button onclick="fs()" id="fs">
         Fullscreen
       </button>
     </div>
     <script>
-    function fs() {
+     function fs() {
       const iframe = document.getElementById('gameFrame');
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen()
