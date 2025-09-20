@@ -265,6 +265,11 @@
     "name": "Cookie Clicker",
     "path": "/cookie-clicker/",
     "icon": "/cookie-clicker/logo.webp"
+},
+{
+    "name": "Edge Not Found",
+    "path": "/edge-not-found/",
+    "icon": "/edge-not-found/icon.jpeg"
 }
     ]
 }
