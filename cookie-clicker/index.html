@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Clicker | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="description" content="Play Cookie Clicker for free on Dimension Games! Experience the popular incremental game where you bake cookies by clicking on a giant cookie and purchasing upgrades and buildings to automate cookie production. Test your strategy and optimize your cookie-generating methods in this addictive game.">
+  <link rel="stylesheet" href="/style.css"> 
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MPFD90BY7J');
+</script>
+<!-- End Google Analytics -->
+
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Cookie Clicker | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Cookie Clicker is an incremental game where the objective is to bake as many cookies as possible by clicking on a giant cookie and purchasing upgrades and buildings that automatically generate cookies for you. You start by clicking the cookie to earn your first cookies, which can then be spent on items like cursors, grandmas, farms, and factories that produce cookies over time. As you accumulate more cookies, you can unlock achievements and special upgrades that enhance your cookie production. The game features a variety of strategies and encourages players to optimize their cookie-generating methods to reach higher levels of production.
+            </p>
+    <h2>The Code</h2>
+    <p>Cookie Clicker was created using JavaScript, HTML, and CSS. JavaScript is used to handle the game's logic, including cookie generation, upgrades, and user interactions. HTML provides the structure of the game interface, while CSS is used for styling and layout to create an engaging visual experience. The combination of these web technologies allows Cookie Clicker to run directly in web browsers without the need for additional software or plugins.
+            </p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/cookie-clicker/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+     function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen()
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen()
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen()
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen()
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

@@ -260,6 +260,11 @@
     "name": "Dino Game",
     "path": "/dino-game/",
     "icon": "/dino-game/assets/default_100_percent/100-error-offline.png"
+},
+{
+    "name": "Cookie Clicker",
+    "path": "/cookie-clicker/",
+    "icon": "/cookie-clicker/logo.webp"
 }
     ]
 }
