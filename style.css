@@ -172,3 +172,22 @@ a:not(.game-item):not(nav ul li a) {
 a:not(.game-item):not(nav ul li a):hover {
   color: #8a59b1;
 }
+#ad-box {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 16px;
+  background: #602c8b;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: sans-serif;
+}
+#ad-box h1 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+#ad-box a {
+  color: rgb(255, 255, 0)
+}
+#ad-box a:hover {
+  color: rgb(166, 166, 0)
+}

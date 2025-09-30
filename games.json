@@ -270,6 +270,16 @@
     "name": "Edge Not Found",
     "path": "/edge-not-found/",
     "icon": "/edge-not-found/icon.jpeg"
+},
+{
+    "name": "N-Gon",
+    "path": "/n-gon/",
+    "icon": "/n-gon/favicon.ico"
+},
+{
+    "name": "Subway Surfers",
+    "path": "/subway-surfers/",
+    "icon": "/subway-surfers/icon.avif"
 }
     ]
 }
