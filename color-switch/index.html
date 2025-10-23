@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Switch Clone</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: sans-serif;
+    }
+    canvas {
+      background: #111;
+      border: 2px solid #333;
+      display: block;
+    }
+    #gameOver {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: none;
+    }
+    #gameOver h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    #restartBtn {
+      padding: 10px 25px;
+      font-size: 1.2em;
+      border: none;
+      background: #00e6e6;
+      color: #111;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    #restartBtn:hover {
+      background: #00cccc;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <div id="gameOver">
+    <h1>Game Over</h1>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 400;
+    canvas.height = 600;
+
+    const colors = ["#ff0080", "#ffdf00", "#32dbf0", "#8cff00"];
+    let gameOver = false;
+    let score = 0;
+    const gravity = 0.4;
+    const jumpForce = -8;
+
+    let cameraY = 0;
+
+    const ball = {
+      x: canvas.width / 2,
+      y: 500,
+      radius: 10,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      velocity: 0,
+    };
+
+    // ====== CLASSES ======
+    class Obstacle {
+      constructor(y, type = "circle") {
+        this.y = y;
+        this.angle = 0;
+        this.rotationSpeed = 2;
+        this.type = type;
+      }
+      update() {
+        this.angle += this.rotationSpeed * Math.PI / 180;
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(canvas.width / 2, this.y - cameraY);
+        ctx.rotate(this.angle);
+        const radius = 100;
+        const lineWidth = 15;
+        if (this.type === "circle") {
+          for (let i = 0; i < 4; i++) {
+            ctx.beginPath();
+            ctx.strokeStyle = colors[i];
+            ctx.lineWidth = lineWidth;
+            ctx.arc(0, 0, radius, (i * Math.PI) / 2, ((i + 1) * Math.PI) / 2);
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+      }
+      checkCollision() {
+        const dx = ball.x - canvas.width / 2;
+        const dy = (ball.y - this.y);
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const radius = 100;
+        if (distance < radius + ball.radius && distance > radius - 20) {
+          const angleToBall = Math.atan2(dy, dx) - this.angle;
+          let section = Math.floor(((angleToBall + 2 * Math.PI) % (2 * Math.PI)) / (Math.PI / 2));
+          let colorAtPoint = colors[section];
+          if (colorAtPoint !== ball.color) triggerGameOver();
+        }
+      }
+    }
+
+    class ColorSwitch {
+      constructor(y) {
+        this.y = y;
+        this.radius = 8;
+      }
+      draw() {
+        const gradient = ctx.createLinearGradient(0, this.y - cameraY - 20, 0, this.y - cameraY + 20);
+        colors.forEach((clr, i) => gradient.addColorStop(i / 3, clr));
+        ctx.beginPath();
+        ctx.fillStyle = gradient;
+        ctx.arc(canvas.width / 2, this.y - cameraY, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      checkTouch() {
+        const dist = Math.hypot(ball.x - canvas.width / 2, ball.y - this.y);
+        if (dist < ball.radius + this.radius) {
+          let newColor;
+          do {
+            newColor = colors[Math.floor(Math.random() * colors.length)];
+          } while (newColor === ball.color);
+          ball.color = newColor;
+          this.y -= 600;
+          score++;
+        }
+      }
+    }
+
+    const obstacles = [
+      new Obstacle(400),
+      new Obstacle(100)
+    ];
+    const colorSwitches = [
+      new ColorSwitch(300),
+      new ColorSwitch(-100)
+    ];
+
+    // ===== GAME FUNCTIONS =====
+    function triggerGameOver() {
+      gameOver = true;
+      document.getElementById("gameOver").style.display = "block";
+    }
+
+    function restartGame() {
+      ball.y = 500;
+      ball.velocity = 0;
+      ball.color = colors[Math.floor(Math.random() * colors.length)];
+      cameraY = 0;
+      score = 0;
+      obstacles.forEach((o, i) => o.y = 400 - i * 300);
+      colorSwitches.forEach((c, i) => c.y = 300 - i * 300);
+      gameOver = false;
+      document.getElementById("gameOver").style.display = "none";
+      update();
+    }
+
+    document.getElementById("restartBtn").addEventListener("click", restartGame);
+
+    document.addEventListener("keydown", e => {
+      if (e.code === "Space" && !gameOver) {
+        ball.velocity = jumpForce;
+      }
+    });
+
+    function update() {
+      if (gameOver) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Gravity
+      ball.velocity += gravity;
+      ball.y += ball.velocity;
+
+      // Camera follows upward
+      if (ball.y - cameraY < 200) cameraY = ball.y - 200;
+
+      // Respawn obstacles when offscreen
+      obstacles.forEach(o => {
+        o.update();
+        o.draw();
+        o.checkCollision();
+        if (o.y - cameraY > canvas.height + 100) {
+          o.y -= 600;
+          o.type = "circle";
+        }
+      });
+
+      colorSwitches.forEach(cs => {
+        cs.draw();
+        cs.checkTouch();
+        if (cs.y - cameraY > canvas.height + 100) {
+          cs.y -= 600;
+        }
+      });
+
+      // Ball
+      ctx.beginPath();
+      ctx.fillStyle = ball.color;
+      ctx.arc(ball.x, ball.y - cameraY, ball.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Floor death
+      if (ball.y - cameraY > canvas.height) triggerGameOver();
+
+      // Score display
+      ctx.font = "20px sans-serif";
+      ctx.fillStyle = "white";
+      ctx.fillText("Score: " + score, 10, 30);
+
+      requestAnimationFrame(update);
+    }
+
+    update();
+  </script>
+</body>
+</html>

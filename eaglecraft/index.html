@@ -52,6 +52,7 @@
     <script>
       function fs() {
         const iframe = document.getElementById('gameFrame');
+        iframe.contentWindow.focus()
         if (iframe.requestFullscreen) {
           iframe.requestFullscreen();
         } else if (iframe.mozRequestFullScreen) { 
