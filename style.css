@@ -175,7 +175,7 @@ a:not(.game-item):not(nav ul li a):hover {
 #ad-box {
   max-width: 500px;
   margin: 20px auto;
-  padding: 16px;
+  padding: 10px;
   background: #602c8b;
   border: 2px solid #ccc;
   border-radius: 6px;
@@ -190,4 +190,7 @@ a:not(.game-item):not(nav ul li a):hover {
 }
 #ad-box a:hover {
   color: rgb(166, 166, 0)
+}
+#ad-box p {
+  margin: 5px;
 }
