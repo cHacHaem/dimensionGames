@@ -194,3 +194,17 @@ a:not(.game-item):not(nav ul li a):hover {
 #ad-box p {
   margin: 5px;
 }
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+  color: #b0b0b0;
+}
+
+ul li strong {
+  color: #f5f5f5;
+}

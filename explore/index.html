@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore | Dimension Games</title>
+    <meta name="description" content="Explore popular and new games on Dimension Games">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MPFD90BY7J');
+</script>
+<!-- End Google Analytics -->
+
+</head>
+<body>
+    <header> 
+        <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+        <h1>Explore | Dimension Games</h1>
+            <hr>
+            <nav>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/css">CSS</a></li>
+                    <li><a href="/html">HTML</a></li>
+                    <li><a href="/javascript">Javascript</a></li>
+                    <li><a href="/just-for-fun">Just For Fun</a></li>
+                    <li><a href="/search">Search</a></li>
+                </ul>
+            </nav>
+      </header>
+    <main>
+        <section>
+            <h2>Explore</h2>
+            <p>Welcome to the explore games page. Here you can find popular and new games to play.</p>
+            <h2>New</h2>
+            <p>These are our newest games. Want more? Request new games on our <a href="/contact/">Contact Page</a></p>
+            <div class="game-grid" id="new-game-grid">
+            </div>
+            <h2>Most Played</h2>
+            <p>These are our most popular games based on our Google Analytics data. Below are the top games played by the most amount of people.</p>
+            <div class="game-grid" id="popular-game-grid"></div>
+            <h2>Change Log</h2>
+            <ul>
+                <li>
+                    <strong>November 9, 2025</strong> Started this change log and added the explore page.
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
+    <script>
+        fetch('/games.json')
+            .then(response => response.json())
+            .then(data => {
+            const newGrid = document.querySelector('#new-game-grid');
+            const popularGrid = document.querySelector('#popular-game-grid');
+
+            let newGames = ["Slow Roads", "Boxing Random", "Volley Random"];
+            let popularGames = ["Retro Bowl", "PolyTrack", "BitLife", "Madalin Stunt Cars", "Basketball Stars"];
+
+            const allGames = [
+                ...(data.css || []),
+                ...(data.html || []),
+                ...(data.javascript || []),
+                ...(data.justForFun || [])
+            ];
+
+            function makeItemFromName(name) {
+                const found = allGames.find(g => g.name === name);
+                const gameItem = document.createElement('a');
+                gameItem.className = 'game-item';
+                gameItem.textContent = name;
+                if (found) {
+                gameItem.href = found.path || '#';
+                const gameIcon = document.createElement('img');
+                gameIcon.src = found.icon || '/favicon.png';
+                gameIcon.alt = found.name;
+                gameItem.prepend(gameIcon);
+                } else {
+                gameItem.href = '#';
+                }
+                return gameItem;
+            }
+
+            newGames.forEach(name => newGrid.appendChild(makeItemFromName(name)));
+            popularGames.forEach(name => popularGrid.appendChild(makeItemFromName(name)));
+
+            // If you also want to append every game from data.css somewhere else, uncomment:
+            // allGames.forEach(game => { /* ... */ });
+            })
+            .catch(error => console.error('Error loading games:', error));
+    </script>
+</body>
+</html>
