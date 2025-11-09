@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Play Slow Roads on Dimension Games, an endless driving zen game in your browser. Relax and explore the calming landscapes as you drive along an infinite road.">
+  <title>Slow Roads | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MPFD90BY7J');
+</script>
+<!-- End Google Analytics -->
+
+</head>
+<body>
+  <header> 
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Slow Roads | Dimension Games</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/css">CSS</a></li>
+                <li><a href="/html">HTML</a></li>
+                <li><a href="/javascript">Javascript</a></li>
+                <li><a href="/just-for-fun">Just For Fun</a></li>
+                <li><a href="/search">Search</a></li>
+            </ul>
+        </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>
+Slow Roads is an endless driving game that emphasizes relaxation and exploration over speed and competition. The objective is to drive along a never-ending road, enjoying the scenery and the calming atmosphere. There are no time limits or scores to achieve; the goal is simply to experience the joy of slow, mindful driving.
+    </p>
+    <h2>The Code</h2>
+    <p>
+The game is built using JavaScript and WebGL for rendering the graphics. It utilizes procedural generation techniques to create an endless road and environment, ensuring that each playthrough offers a unique experience. The game's physics engine simulates realistic car handling, allowing players to navigate the road at their own pace.
+    </p>
+    <div style="text-align: center; width: 100%">
+      <iframe id="gameFrame" src="/slow-roads/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+      function fs() {
+        const iframe = document.getElementById('gameFrame');
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { 
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>

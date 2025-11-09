@@ -280,6 +280,18 @@
     "name": "Subway Surfers",
     "path": "/subway-surfers/",
     "icon": "/subway-surfers/icon.avif"
+},
+{    "name": "Volley Random",
+    "path": "/volley-random/",
+    "icon": "/volley-random/icon.png"
+},
+{    "name": "Boxing Random",
+    "path": "/boxing-random/",
+    "icon": "/boxing-random/icon.webp"
+},
+{    "name": "Slow Roads",
+    "path": "/slow-roads/",
+    "icon": "/slow-roads/icon.png"
 }
     ]
 }
