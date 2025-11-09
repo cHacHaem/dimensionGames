@@ -43,7 +43,7 @@
   <h2>The Code</h2>
     <p>Sandboxels utilizes a custom JavaScript engine built atop the HTML5 canvas element. This setup allows for efficient pixel-level rendering and real-time simulation of over 500 unique elements. The game is entirely self-contained, with no external libraries or frameworks, ensuring lightweight performance suitable for modern browsers. </p>
     <div style="text-align: center; width: 100%">
-      <iframe id="gameFrame" src="/sandboxels/game.html" width="90%" height="600"></iframe>
+      <iframe sandbox="allow-scripts allow-same-origin allow-pointer-lock" id="gameFrame" src="/sandboxels/game.html" width="90%" height="600"></iframe>
       <br>
       <button onclick="fs()" id="fs">
         Fullscreen
