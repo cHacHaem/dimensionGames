@@ -292,6 +292,10 @@
 {    "name": "Slow Roads",
     "path": "/slow-roads/",
     "icon": "/slow-roads/icon.png"
+},
+{    "name": "Super Star Car",
+    "path": "/super-star-car/",
+    "icon": "/super-star-car/icon.jpeg"
 }
     ]
 }
