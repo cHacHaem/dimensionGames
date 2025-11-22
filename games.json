@@ -296,6 +296,12 @@
 {    "name": "Super Star Car",
     "path": "/super-star-car/",
     "icon": "/super-star-car/icon.jpeg"
+},
+{
+    "name": "Madalin Stunt Cars 2",
+    "path": "/madalin-stunt-cars-2/",
+    "icon": "/madalin-stunt-cars-2/icon.png"
 }
+
     ]
 }
