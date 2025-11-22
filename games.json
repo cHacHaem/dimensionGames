@@ -301,6 +301,14 @@
     "name": "Madalin Stunt Cars 2",
     "path": "/madalin-stunt-cars-2/",
     "icon": "/madalin-stunt-cars-2/icon.png"
+},
+{    "name": "Super Hot",
+    "path": "/super-hot/",
+    "icon": "/super-hot/icon.jpeg"
+},
+{    "name": "Color Switch",
+    "path": "/color-switch/",
+    "icon": "/color-switch/icon.png"
 }
 
     ]
