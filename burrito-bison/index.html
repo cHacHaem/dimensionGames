@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burrito Bison | Dimension Games</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css"> 
+  <meta name="description" content="Play Burrito Bison for free at Dimension Games! Launch your burrito-flinging bison to smash through obstacles, collect coins, and upgrade your abilities in this fun and addictive game.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPFD90BY7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MPFD90BY7J');
+</script>
+<!-- End Google Analytics -->
+
+</head>
+<body>
+  <header>
+   
+    <img src="/favicon.png" alt="Dimension Games Logo" style="height: 50px; margin-right: 10px;">
+    <h1>Burrito Bison | Dimension Games</h1>
+        <hr>
+        <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/css">CSS</a></li>
+                    <li><a href="/html">HTML</a></li>
+                    <li><a href="/javascript">Javascript</a></li>
+                    <li><a href="/just-for-fun">Just For Fun</a></li>
+                    <li><a href="/explore/">Explore</a></li>
+                    <li><a href="/search">Search</a></li>
+                </ul>
+            </nav>
+  </header>
+  <main>
+    <h2>How To Play</h2>
+    <p>Burrito Bison is a fun and addictive game where you launch a burrito-flinging bison to smash through obstacles and collect coins. Use your mouse or touch controls to aim and launch the bison. As you progress, you can upgrade your bison's abilities and unlock new characters. The goal is to travel as far as possible while smashing through gummy bears and other obstacles!</p>
+            <h2>The Code</h2>
+    <p>This game is built using Unity WebGL technology. The game logic is handled by Unity's engine, which manages physics, rendering, and user input. The game assets and scripts are compiled into a WebGL format, allowing it to run smoothly in modern web browsers.</p>
+            <div style="text-align: center; width: 100%">
+      <iframe sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms" id="gameFrame" src="/burrito-bison/game.html" width="90%" height="600"></iframe>
+      <br>
+      <button onclick="fs()" id="fs">
+        Fullscreen
+      </button>
+    </div>
+    <script>
+    function fs() {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen()
+      } else if (iframe.mozRequestFullScreen) { 
+        iframe.mozRequestFullScreen()
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen()
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen()
+      }
+    }
+    </script>
+  </main>
+  <footer>
+    <p>Dimension Games | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/terms">Terms</a></p>
+</footer>
+</body>
+</html>
