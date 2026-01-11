@@ -308,6 +308,10 @@
 {    "name": "Burrito Bison",
     "path": "/burrito-bison/",
     "icon": "/burrito-bison/icon.png"
+},
+{    "name": "Block Blast",
+    "path": "/block-blast/",
+    "icon": "/block-blast/icon.webp"
 }
 
     ]
