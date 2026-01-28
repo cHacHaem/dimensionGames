@@ -312,6 +312,10 @@
 {    "name": "Block Blast",
     "path": "/block-blast/",
     "icon": "/block-blast/icon.webp"
+},
+{    "name": "Monkey Mart",
+    "path": "/monkey-mart/",
+    "icon": "/monkey-mart/bg_loading.png"
 }
 
     ]
