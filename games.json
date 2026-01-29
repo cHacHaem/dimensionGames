@@ -316,6 +316,10 @@
 {    "name": "Monkey Mart",
     "path": "/monkey-mart/",
     "icon": "/monkey-mart/bg_loading.png"
+},
+{    "name": "Stick War",
+    "path": "/stick-war/",
+    "icon": "/stick-war/icon.jpg"
 }
 
     ]
